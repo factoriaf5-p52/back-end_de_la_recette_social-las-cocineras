@@ -6,7 +6,7 @@ import { Column, PrimaryGeneratedColumn, Entity, ManyToMany } from 'typeorm';
 export class ListaCompra {
   @ApiProperty({ example: 99 })
   @PrimaryGeneratedColumn()
-  id_lista_compra: number;
+  id_usuario: number;
 
   //   @ApiProperty({ example: 'harina' })
   //   @Column()
@@ -28,6 +28,6 @@ export class ListaCompra {
   @Column()
   id_receta: number;
 
-  @ManyToMany(() => Receta, (receta: Receta) => receta.listaCompra)
-  receta: Receta[];
+  // @ManyToMany(() => Receta, (receta: Receta) => receta.listaCompra)
+  // receta: Receta[];
 }

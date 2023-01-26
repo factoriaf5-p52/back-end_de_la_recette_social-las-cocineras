@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { Ingredient } from 'src/ingredients/entities/ingredient.entity';
 import { ListaCompra } from 'src/lista-compra/entities/lista-compra.entity';
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany, ManyToMany, JoinTable } from 'typeorm';
 
@@ -44,12 +45,12 @@ export class Receta {
   @Column('text')
   instrucciones: string;
 
-  @ManyToMany(
-    () => ListaCompra,
-    (listaCompra: ListaCompra) => listaCompra.receta,
+  @ManyToOne(
+    () => Ingredient,
+    (ingredient: Ingredient) => ingredient.receta,
   )
   @JoinTable()
-  listaCompra: ListaCompra[];
+  ingredient: Ingredient[];
 
-  receta: Receta[];
+
 }

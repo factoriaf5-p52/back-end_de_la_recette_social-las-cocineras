@@ -8,6 +8,10 @@ import { RecetaModule } from './receta/receta.module';
 import { configService } from 'config/config.service';
 import { UsersModule } from './users/users.module';
 import { ListaCompraModule } from './lista-compra/lista-compra.module';
+import { LoginController } from './auth/login.controller';
+import { AuthService } from './auth/auth.service';
+import { IngredientsModule } from './ingredients/ingredients.module';
+
 
 @Module({
   imports: [
@@ -15,8 +19,9 @@ import { ListaCompraModule } from './lista-compra/lista-compra.module';
     RecetaModule,
     UsersModule,
     ListaCompraModule,
+    IngredientsModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, LoginController],
+  providers: [AppService, AuthService],
 })
 export class AppModule {}

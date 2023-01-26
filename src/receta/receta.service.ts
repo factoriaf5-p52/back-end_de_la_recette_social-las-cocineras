@@ -21,7 +21,7 @@ export class RecetaService {
     });
   }
 
-  createReceta(newReceta: RecetaDto): Promise<Receta> {
+  createReceta(newReceta: RecetaDto) {
     return this.recetaRepository.save(newReceta);
   }
 

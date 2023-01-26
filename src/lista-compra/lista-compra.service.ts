@@ -19,12 +19,12 @@ export class ListaCompraService {
     return this.listaCompraRepository.find({ relations: ['receta'] });
   }
 
-  async findOne(id_lista_compra: number): Promise<ListaCompra> {
-    return this.listaCompraRepository.findOne({
-      where: { id_lista_compra },
-      relations: ['receta'],
-    });
-  }
+  // async findOne(id_lista_compra: number): Promise<ListaCompra> {
+  //   return this.listaCompraRepository.findOne({
+  //     where: { id_lista_compra },
+  //     relations: ['receta'],
+  //   });
+  // }
 
   async update(
     id_lista_compra: number,
@@ -36,7 +36,7 @@ export class ListaCompraService {
     );
   }
 
-  async remove(id_lista_compra: number) {
-    return this.listaCompraRepository.delete({ id_lista_compra });
-  }
+  // async remove(id_lista_compra: number) {
+  //   return this.listaCompraRepository.delete({ id_lista_compra });
+  // }
 }
