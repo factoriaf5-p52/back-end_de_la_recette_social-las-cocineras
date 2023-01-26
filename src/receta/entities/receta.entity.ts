@@ -1,7 +1,15 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Ingredient } from 'src/ingredients/entities/ingredient.entity';
 import { ListaCompra } from 'src/lista-compra/entities/lista-compra.entity';
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany, ManyToMany, JoinTable } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  OneToMany,
+  ManyToMany,
+  JoinTable,
+} from 'typeorm';
 
 @Entity()
 export class Receta {
@@ -45,10 +53,7 @@ export class Receta {
   @Column('text')
   instrucciones: string;
 
-  @ManyToOne(
-    () => Ingredient,
-    (ingredient: Ingredient) => ingredient.receta,
-  )
+  @ManyToOne(() => Ingredient, (ingredient: Ingredient) => ingredient.receta)
   @JoinTable()
   ingredient: Ingredient[];
 
