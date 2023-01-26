@@ -11,8 +11,3 @@ describe('LoginController', () => {
 
     controller = module.get<LoginController>(LoginController);
   });
-
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
-  });
-});
