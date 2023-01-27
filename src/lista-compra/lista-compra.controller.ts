@@ -13,31 +13,31 @@ import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 export class ListaCompraController {
   constructor(private readonly listaCompraService: ListaCompraService) {}
 
-  // @Post()
-  // create(@Body() createListaCompraDto: CreateListaCompraDto) {
-  //   return this.listaCompraService.create(createListaCompraDto);
-  // }
+  @Post()
+  create(@Body() createListaCompraDto: CreateListaCompraDto) {
+    return this.listaCompraService.create(createListaCompraDto);
+  }
 
-  // @Get()
-  // findAll() {
-  //   return this.listaCompraService.findAll();
-  // }
+  @Get()
+  findAll() {
+    return this.listaCompraService.findAll();
+  }
 
   // @Get(':id_lista_compra')
   // findOne(@Param('id_lista_compra') id_lista_compra: number) {
   //   return this.listaCompraService.findOne(id_lista_compra);
   // }
 
-  // @Patch(':id_lista_compra')
-  // update(
-  //   @Param('id_lista_compra') id_lista_compra: number,
-  //   @Body() updateListaCompraDto: UpdateListaCompraDto,
-  // ) {
-  //   return this.listaCompraService.update(
-  //     id_lista_compra,
-  //     updateListaCompraDto,
-  //   );
-  // }
+  @Patch(':id_lista_compra')
+  update(
+    @Param('id_lista_compra') id_lista_compra: number,
+    @Body() updateListaCompraDto: UpdateListaCompraDto,
+  ) {
+    return this.listaCompraService.update(
+      id_lista_compra,
+      updateListaCompraDto,
+    );
+  }
 
   // @Delete(':id_lista_compra')
   // remove(@Param('id_lista_compra') id_lista_compra: number) {

@@ -10,10 +10,10 @@ export class Ingredient {
     nombre: string;
 
 
-    @OneToMany(
-    () => Receta,
-    (receta: Receta) => receta.ingredient,
-  )
-    @JoinTable()
-  receta: Receta[];
+  //   @OneToMany(
+  //   () => Receta,
+  //   (receta: Receta) => receta
+  // )
+  //   @JoinTable()
+  // receta: Receta[];
 }

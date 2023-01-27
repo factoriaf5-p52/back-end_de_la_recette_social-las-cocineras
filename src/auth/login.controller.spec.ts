@@ -10,4 +10,7 @@ describe('LoginController', () => {
     }).compile();
 
     controller = module.get<LoginController>(LoginController);
+  })
   });
+
+
