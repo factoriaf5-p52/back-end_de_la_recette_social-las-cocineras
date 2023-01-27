@@ -12,19 +12,15 @@ export class UsersService {
     @InjectRepository(User) private userRepository: Repository<User>,
   ) {}
 
-  async create(createUserDto: CreateUserDto) {
+  async create(createUserDto: CreateUserDto): Promise<User> {
     return this.userRepository.save(createUserDto);
   }
 
-<<<<<<< HEAD
-   findAll():Promise<User[]> {
-=======
   findAll(): Promise<User[]> {
->>>>>>> 3e5f65e439203cfc64d6b41a8274247bfcfe2455
     return this.userRepository.find();
   }
 
-  findOne(id: number):string {
+  findOne(id: number): string {
     return `This action returns a #${id} user`;
   }
 
