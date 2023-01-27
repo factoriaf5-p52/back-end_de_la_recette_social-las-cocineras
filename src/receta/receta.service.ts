@@ -11,13 +11,14 @@ export class RecetaService {
   ) {}
 
   async findAll(): Promise<Receta[]> {
-    return await this.recetaRepository.find({ relations: ['listaCompra']});
+    return await this.recetaRepository.find();
+    // { relations: ['listaCompra']}
   }
 
   async findReceta(recetaId: number): Promise<Receta> {
     return await this.recetaRepository.findOne({
       where: { id_receta: recetaId },
-      relations: ['listaCompra'],
+      // relations: ['listaCompra'],
     });
   }
 

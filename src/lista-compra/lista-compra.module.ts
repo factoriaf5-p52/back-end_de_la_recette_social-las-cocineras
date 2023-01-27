@@ -6,8 +6,8 @@ import { AuthModule } from 'utilities/auth.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([ListaCompra]), AuthModule],
-  controllers: [ListaCompraController],
-  providers: [ListaCompraService]
+  // imports: [TypeOrmModule.forFeature([ListaCompra]), AuthModule],
+  // controllers: [ListaCompraController],
+  // providers: [ListaCompraService]
 })
 export class ListaCompraModule {}

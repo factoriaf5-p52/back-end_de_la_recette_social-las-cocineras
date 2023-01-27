@@ -55,7 +55,7 @@ export class Receta {
 
   @ManyToOne(() => Ingredient, (ingredient: Ingredient) => ingredient.receta)
   @JoinTable()
-  ingredient: Ingredient[];
+  ingrediente: Ingredient[];
 
 
 }

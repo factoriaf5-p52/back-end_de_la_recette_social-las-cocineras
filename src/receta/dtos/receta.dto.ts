@@ -10,6 +10,6 @@ export class RecetaDto {
   readonly pais: string;
   readonly instrucciones: string;
 
-  @ApiProperty({ example: { id_lista_compra: 1 } })
-  readonly ingredient: Ingredient[];
+  @ApiProperty()
+  readonly ingrediente: Ingredient[];
 }

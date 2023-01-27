@@ -23,7 +23,10 @@ export class IngredientsController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateIngredientDto: UpdateIngredientDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateIngredientDto: UpdateIngredientDto,
+  ) {
     return this.ingredientsService.update(+id, updateIngredientDto);
   }
 

@@ -24,9 +24,9 @@ export class ListaCompra {
   //   @Column()
   //   id_usuario: number;
 
-  @ApiProperty({ example: 2 })
-  @Column()
-  id_receta: number;
+  // @ApiProperty({ example: 2 })
+  // @Column()
+  // id_receta: number;
 
   // @ManyToMany(() => Receta, (receta: Receta) => receta.listaCompra)
   // receta: Receta[];

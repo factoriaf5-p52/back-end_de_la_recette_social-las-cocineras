@@ -13,9 +13,12 @@ export class Ingredient {
   id_ingrediente: number;
 
   @Column()
-  nombre: string;
+  nombre_ingrediente: string;
 
-  @OneToMany(() => Receta, (receta: Receta) => receta.ingredient)
+  @Column()
+  unidades_cantidad: string;
+
+  @OneToMany(() => Receta, (receta: Receta) => receta.ingrediente)
   @JoinTable()
   receta: Receta[];
 }

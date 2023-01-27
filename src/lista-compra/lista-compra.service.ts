@@ -8,16 +8,17 @@ import { ListaCompra } from './entities/lista-compra.entity';
 @Injectable()
 export class ListaCompraService {
   constructor(
-    @InjectRepository(ListaCompra) private listaCompraRepository: Repository<ListaCompra>,
+    @InjectRepository(ListaCompra)
+    private listaCompraRepository: Repository<ListaCompra>,
   ) {}
 
-  create(createListaCompraDto: CreateListaCompraDto): Promise<ListaCompra> {
-    return this.listaCompraRepository.save(createListaCompraDto);
-  }
+  // create(createListaCompraDto: CreateListaCompraDto): Promise<ListaCompra> {
+  //   return this.listaCompraRepository.save(createListaCompraDto);
+  // }
 
-  async findAll(): Promise<ListaCompra[]> {
-    return this.listaCompraRepository.find({ relations: ['receta'] });
-  }
+  // async findAll(): Promise<ListaCompra[]> {
+  //   return this.listaCompraRepository.find({ relations: ['receta'] });
+  // }
 
   // async findOne(id_lista_compra: number): Promise<ListaCompra> {
   //   return this.listaCompraRepository.findOne({
@@ -26,15 +27,15 @@ export class ListaCompraService {
   //   });
   // }
 
-  async update(
-    id_lista_compra: number,
-    updateListaCompraDto: UpdateListaCompraDto,
-  ) {
-    return this.listaCompraRepository.update(
-      id_lista_compra,
-      updateListaCompraDto,
-    );
-  }
+  // async update(
+  //   id_lista_compra: number,
+  //   updateListaCompraDto: UpdateListaCompraDto,
+  // ) {
+  //   return this.listaCompraRepository.update(
+  //     id_lista_compra,
+  //     updateListaCompraDto,
+  //   );
+  // }
 
   // async remove(id_lista_compra: number) {
   //   return this.listaCompraRepository.delete({ id_lista_compra });
