@@ -16,7 +16,11 @@ export class UsersService {
     return this.userRepository.save(createUserDto);
   }
 
+<<<<<<< HEAD
    findAll():Promise<User[]> {
+=======
+  findAll(): Promise<User[]> {
+>>>>>>> 3e5f65e439203cfc64d6b41a8274247bfcfe2455
     return this.userRepository.find();
   }
 
@@ -24,8 +28,8 @@ export class UsersService {
     return `This action returns a #${id} user`;
   }
 
-  async findOneByNombreUsuario(nombre_usuario:string): Promise<User> {
-    return this.userRepository.findOne({where:{nombre_usuario}})
+  async findOneByNombreUsuario(nombre_usuario: string): Promise<User> {
+    return this.userRepository.findOne({ where: { nombre_usuario } });
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
