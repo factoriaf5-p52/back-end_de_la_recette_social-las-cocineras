@@ -7,11 +7,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { RecetaModule } from './receta/receta.module';
 import { configService } from 'config/config.service';
 import { UsersModule } from './users/users.module';
-import { AuthService } from './auth/auth.service';
-import { LoginController } from './auth/login.controller';
+// import { AuthService } from './auth/auth.service';
+// import { LoginController } from './auth/login.controller';
 import { IngredienteModule } from './ingrediente/ingrediente.module';
-import { ListaCompraModule } from './lista_compra/lista_compra.module';
-import { AuthModule } from './auth/auth.module';
+// import { ListaCompraModule } from './lista_compra/lista_compra.module';
+import { AuthModule } from 'utilities/auth.module';
 
 @Module({
   imports: [
@@ -19,8 +19,9 @@ import { AuthModule } from './auth/auth.module';
     RecetaModule,
     UsersModule,
     IngredienteModule,
-    ListaCompraModule,
-    AuthModule,
+    // ListaCompraModule,
+    AuthModule
+   
   ],
   controllers: [AppController],
   providers: [AppService],

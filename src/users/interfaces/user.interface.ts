@@ -1,4 +1,5 @@
 export interface IUser {
-  nombre_usuario: string,
+  id_usuario: number;
   id_registro: number;
+  insignias: number;
 }

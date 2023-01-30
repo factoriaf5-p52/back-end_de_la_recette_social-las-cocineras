@@ -4,11 +4,13 @@ import { RecetaController } from './receta.controller';
 import { RecetaService } from './receta.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from 'utilities/auth.module';
-import { Ingrediente } from 'src/ingrediente/entities/ingrediente.entity';
+import { UsersModule } from 'src/users/users.module';
+// <import { ListaCompraModule } from 'src/lista_compra/lista_compra.module';>
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Receta, Ingrediente]), AuthModule],
+  imports: [TypeOrmModule.forFeature([Receta]), AuthModule, UsersModule],
   providers: [RecetaService],
   controllers: [RecetaController],
+  exports:[RecetaService]
 })
 export class RecetaModule {}

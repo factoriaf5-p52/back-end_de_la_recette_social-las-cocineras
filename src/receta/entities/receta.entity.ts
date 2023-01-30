@@ -1,11 +1,11 @@
 import { Ingrediente } from 'src/ingrediente/entities/ingrediente.entity';
+import { User } from 'src/users/entities/user.entity';
 import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
   JoinTable,
   ManyToOne,
-  OneToMany
 } from 'typeorm';
 
 @Entity()
@@ -14,19 +14,10 @@ export class Receta {
   id_receta: number;
 
   @Column()
-  nombre_receta: string;
-
-  @Column()
-  tipo_receta: string;
-
-  @Column()
   valoracion: number;
 
   @Column()
   tiempo_cocina: number;
-
-  @Column()
-  num_visitas: number;
 
   @Column()
   num_veces_compartido: number;
@@ -40,11 +31,24 @@ export class Receta {
   @Column('text')
   instrucciones: string;
 
-  @OneToMany(
-    () => Ingrediente,
-    (ingredientes: Ingrediente) => {
-      console.log(ingredientes.receta);
-    }
-  )
-  ingredientes: Ingrediente[];
+  @Column()
+  tipo_cocina: number;
+
+  @Column()
+  nombre_receta: string;
+
+  @Column()
+  authorId:number;
+
+
+
+@ManyToOne(()=>User, user => user.recetas)
+author:User
+
+  // @ManyToOne(
+  //   () => Ingrediente,
+  //   (ingrediente: Ingrediente) => ingrediente.receta
+  // )
+  // @JoinTable()
+  // ingrediente: Ingrediente[];
 }

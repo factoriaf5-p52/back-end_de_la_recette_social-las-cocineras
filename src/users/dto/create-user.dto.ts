@@ -8,7 +8,7 @@ export class CreateUserDto {
   readonly nombre_usuario: string;
 
   @ApiProperty({ example: '1234' })
-  readonly password: string;
+  readonly contraseña_registro: string;
 
   @ApiProperty({ example: '1' })
   readonly id_registro: number;

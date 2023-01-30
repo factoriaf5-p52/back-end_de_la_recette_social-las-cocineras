@@ -1,7 +1,7 @@
-export class CreateListaCompraDto {
-  id_ingrediente: number;
-  readonly nombre_ingrediente: string;
-  id_usuario: number;
-  cantidad_ingrediente: number;
-//   readonly unidades_cantidad: string;
-}
+// export class CreateListaCompraDto {
+
+//     id_lista_compra: number;
+//       nombre_ingrediente: string;
+//       cantidad_ingrediente: number;
+//       id_usuario: number;
+// }
