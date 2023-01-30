@@ -5,6 +5,7 @@ import {
   PrimaryGeneratedColumn,
   JoinTable,
   ManyToOne,
+  OneToMany
 } from 'typeorm';
 
 @Entity()
@@ -39,10 +40,11 @@ export class Receta {
   @Column('text')
   instrucciones: string;
 
-  // @ManyToOne(
-  //   () => Ingrediente,
-  //   (ingrediente: Ingrediente) => ingrediente.receta
-  // )
-  // @JoinTable()
-  // ingrediente: Ingrediente[];
+  @OneToMany(
+    () => Ingrediente,
+    (ingredientes: Ingrediente) => {
+      console.log(ingredientes.receta);
+    }
+  )
+  ingredientes: Ingrediente[];
 }
