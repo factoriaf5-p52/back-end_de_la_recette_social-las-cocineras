@@ -41,13 +41,13 @@ export class Receta {
   @Column('text')
   instrucciones: string;
 
-  @OneToMany(
-    () => Ingrediente,
-    // { cascade: ['delete', 'update'] },
-    (ingredientes: Ingrediente) => {
-      console.log(ingredientes.receta);
-    }
-  )
-  @JoinColumn({ name: 'id_ingrediente' })
-  ingredientes: Ingrediente[];
+  // @OneToMany(
+  //   () => Ingrediente,
+  //   // { cascade: ['delete', 'update'] },
+  //   (ingredientes: Ingrediente) => {
+  //     console.log(ingredientes.receta);
+  //   }
+  // )
+  // @JoinColumn({ name: 'id_ingrediente' })
+  // ingredientes: Ingrediente[];
 }

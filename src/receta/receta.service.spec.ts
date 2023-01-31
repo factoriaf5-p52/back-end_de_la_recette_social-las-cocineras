@@ -50,36 +50,57 @@ const data:Receta[] =  [ {
   "num_veces_compartido": 0,
   "pais": "uk",
   "comentarios": null,
-  "instrucciones": "url"
+  "instrucciones": "url", 
+  "ingredientes": [{"nombre_ingrediente": "harina", "unidades_cantidad": "g", "id_ingrediente": 3, "receta": new Receta}]
 },
 {
-  "id_receta": 1,
-  "nombre_receta": "pastel",
-  "tipo_receta": "postre",
-  "valoracion": 5,
+  "id_receta": 2,
+  "nombre_receta": "pan",
+  "tipo_receta": "acompañamiento",
+  "valoracion": 6,
   "tiempo_cocina": 60,
   "num_visitas": 2,
   "num_veces_compartido": 0,
   "pais": "uk",
   "comentarios": null,
-  "instrucciones": "url"
+  "instrucciones": "url", 
+  "ingredientes": [{"nombre_ingrediente": "harina", "unidades_cantidad": "g", "id_ingrediente": 3, "receta": new Receta}]
 },
 ];
-describe('RecetaService', () => {
-  let service: RecetaService;
-  const mockRecetaRepository = {
-    find: jest.fn().mockResolvedValue({data}),
-  }
-  beforeAll(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      providers: [RecetaService],
-      {
-        provide: getRepositoryToken(Receta),
-        useValue: (mockRecetaRepository)
-      }
-    }).compile();
-    it('findAll should return the a list of recipes', async () => {
-      expect(await service.findAll()).toMatchObject({data});
-    });
-  }});
+// describe('RecetaService', () => {
+//   let recetaService: RecetaService;
+//   const mockRecetaRepository = {
+//     find: jest.fn().mockResolvedValue({data}),
+//   }
+//   beforeAll(async () => {
+//     const module: TestingModule 
+//     = await Test.createTestingModule({
+//       providers: [RecetaService],
+//       {
+//         provide: getRepositoryToken(Receta),
+//         useValue: (mockRecetaRepository)
+//       }
+//     }).compile();
+//     it('findAll should return the a list of recipes', async () => {
+//       expect(await recetaService.findAll()).toMatchObject({data});
+//     });
+//   })});
+
+  describe('RecetaService', () => {
+    let recetaService: RecetaService;
+    const mockRecetaRepository = {
+      find: jest.fn().mockResolvedValue({data}),
+    }
+    beforeAll(async () => {
+      const module = await Test.createTestingModule({
+        providers: [RecetaService],
+        {
+          provide: getRepositoryToken(Receta),
+          useValue: (mockRecetaRepository)
+        }
+      }).compile();
+      it('findAll should return the a list of recipes', async () => {
+        expect(await recetaService.findAll()).toMatchObject({data});
+      });
+    })});
 
