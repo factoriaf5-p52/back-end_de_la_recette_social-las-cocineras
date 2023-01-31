@@ -19,6 +19,8 @@ export class RecetaService {
     return await this.recetaRepository.findOne({
       where: { id_receta: recetaId },
     });
+
+    relations:['ingrediente']
   }
 
   createReceta(newReceta: RecetaDto): Promise<Receta> {

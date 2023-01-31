@@ -20,7 +20,12 @@ export class Ingrediente {
   @Column()
   unidades_cantidad: string;
 
-  @ManyToOne(() => Receta, (receta: Receta) => receta.ingredientes)
-  @JoinColumn({ name: 'id_ingrediente' })
-  receta: Receta;
+  @ManyToOne(()=>Receta, receta => receta.Ingrediente)
+  list:Receta
+
+
+
+  // @ManyToOne(() => Receta, (receta: Receta) => receta.ingredientes)
+  // @JoinColumn({ name: 'id_ingrediente' })
+  // receta: Receta;
 }
